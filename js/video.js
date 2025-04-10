@@ -5,15 +5,20 @@ window.addEventListener("load", function () {
 
 	// Initialize the video element
 	video = document.getElementById("player1");
+
 	video.autoplay = false;
+	console.log("Auto play is set to false");
+
 	video.loop = false;
+	console.log("Loop is set to false");
+
 	video.load();
 
 	// Play Video
 	document.getElementById("play").addEventListener("click", function () {
 		console.log("Play Video");
 		video.play();
-		document.getElementById("volume").textContent = `${Math.round(video.volume * 100)}%`;
+		document.getElementById("volume").textContent = Math.round(video.volume * 100) + "%";
 	});
 
 	// Pause Video
@@ -55,7 +60,7 @@ window.addEventListener("load", function () {
 		video.volume = this.value / 100;
 		video.muted = false;
 		document.getElementById("mute").textContent = "Mute";
-		document.getElementById("volume").textContent = `${Math.round(video.volume * 100)}%`;
+		document.getElementById("volume").textContent = Math.round(video.volume * 100) + "%";
 	});
 
 	// Add oldSchool class
